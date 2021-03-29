@@ -3,6 +3,9 @@ service mysql start
 mysql -u user root init.sql
 rm init.sql
 
+# SSH
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/chez-sgrondin.key -out /etc/ssl/certs/chez-sgrondin.crt -subj "/C=FR/ST=Paris/L=Île-de-France/O=42/OU=sgrondin/CN=chez-sgrondin"
+
 # nginx
 mv nginx.conf /etc/nginx/sites-available/chez-sgrondin.conf
 ln -s /etc/nginx/sites-available/chez-sgrondin.conf /etc/nginx/sites-enabled/
