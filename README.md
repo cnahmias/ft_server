@@ -7,12 +7,12 @@ docker build -t ft_server .
 ```
 
 ## Run
-### Without autoindex
+### With autoindex (default)
 ```
 docker run --name petit_poney -it -p 80:80 -p 443:443 ft_server
 ```
 
-### With autoindex
+### Without autoindex
 ```
-docker run --name petit_poney -e AUTOINDEX=on -it -p 80:80 -p 443:443 ft_server
+docker run --name petit_poney -e AUTOINDEX=off -it -p 80:80 -p 443:443 ft_server
 ```
