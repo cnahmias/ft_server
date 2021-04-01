@@ -26,7 +26,9 @@ mv wp-config.php ./var/www/html/chez-sgrondin/
 rm -R wordpress
 rm latest.tar.gz
 cd /var/www/html
-echo '<?php phpinfo();?>' > index.php
+mkdir php
+echo '<?php phpinfo();?>' > php/index.php
+rm index.nginx-debian.html
 cd /
 chown www-data:www-data /var/www/html/chez-sgrondin -R
 chmod -R -wx,u+rwX,g+rX,o+rX /var/www/html/chez-sgrondin
